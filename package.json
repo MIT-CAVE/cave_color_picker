@@ -1,0 +1,36 @@
+{
+  "name": "cave_color_picker",
+  "version": "1.0.0b1",
+  "description": "A simple dependency free color picker for general use in js projects.",
+  "main": "./lib/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "npm install && vite --port 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MIT-CAVE/cave_color_picker.git"
+  },
+  "keywords": [
+    "cave",
+    "color",
+    "picker"
+  ],
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Ella Wang"
+    },
+    {
+      "name": "Connor Makowski"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/MIT-CAVE/cave_color_picker/issues"
+  },
+  "homepage": "https://github.com/MIT-CAVE/cave_color_picker#readme",
+  "devDependencies": {
+    "vite": "^6.0.3"
+  }
+}
