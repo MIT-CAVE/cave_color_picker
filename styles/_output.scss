@@ -1,0 +1,19 @@
+.color-picker{
+  > output{
+    grid-area: color;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    width: 50px;
+    background: hsla(var(--hue), var(--s), var(--l), var(--a));
+    box-shadow: 0 0 8px -5px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0; bottom: 0; left: 0; right: 0;
+      background: repeating-conic-gradient(var(--checkboard-color) 0% 25%, transparent 0% 50%) 0 / 12px 12px;
+    }
+  }
+}

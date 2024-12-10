@@ -1,0 +1,73 @@
+.color-picker{
+  $self: &;
+
+  --hue: 150;
+  --saturation: 100;
+  --lightness: 50;
+  --alpha: 100;
+
+  --s: calc(var(--saturation) * 1%);
+  --l: calc(var(--lightness) * 1%);
+  --a: calc(var(--alpha) * 1%);
+
+  --color: hsla(var(--hue), var(--s), var(--l), var(--a));
+
+  --checkboard-color: #DDD;
+  --checkboard-base-gradient: repeating-conic-gradient(var(--checkboard-color) 0% 25%, transparent 0% 50%);
+
+  --width: 320;
+  --width-units: 1px;
+
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+
+  width: calc(var(--width) * var(--width-units));
+  position: relative;
+  box-sizing: border-box;
+
+  transition: opacity .15s;
+  transition-timing-function: ease-out;
+
+  &__hue.range{
+    grid-area: hue;
+    --fill-color: linear-gradient(to right, red 0%, #ff0 16.6%, lime 33.3%, cyan 50%, blue 66.6%, #f0f 83.3%, red 100%);
+  }
+
+  &__saturation.range{
+    grid-area: saturation;
+    --fill-color: linear-gradient(to right, white, hsl(var(--hue),var(--s), 50%));
+  }
+
+  &__lightness.range{
+    grid-area: lightness;
+    --c: hsl(var(--hue), var(--s), 50%);
+    --fill-color: linear-gradient(to right, black, var(--c), white);
+  }
+
+  &__alpha.range{
+    grid-area: alpha;
+    --checkboard-size: 8px;
+    --fill-color: linear-gradient(to right, transparent, hsl(var(--hue), var(--s), var(--l))),
+                  var(--checkboard-base-gradient)
+                  0 / var(--checkboard-size) var(--checkboard-size);
+  }
+
+  button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+  }
+}
+
+// opacity-squares background
+.cp-checkboard::before{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0; bottom: 0; left: 0; right: 0;
+  border-radius: inherit;
+  background: repeating-conic-gradient(var(--checkboard-color) 0% 25%, transparent 0% 50%) 0 / 12px 12px;
+  // box-shadow: 0 0 0 5px hsl(var(--hue), var(--s), var(--l)) inset;
+}

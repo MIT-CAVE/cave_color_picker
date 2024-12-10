@@ -22,6 +22,13 @@ window.onClickOutside = (target) => {
     onInput: (color) => window.onInput(color),
     onChange: (color) => window.onChange(color),
     colorFormats: ['hex', 'rgba', 'hsla'],
+    showColorStringEnabled: false,
+    icons: {
+      format: '🔄',
+      add: '+',
+      opacity: '🔅',
+      copy: '📎',
+    },
   });
 
   const container = document.getElementById('color-picker-container');
