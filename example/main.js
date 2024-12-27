@@ -21,13 +21,12 @@ window.onClickOutside = (target) => {
     onClickOutside: (e) => window.onClickOutside(e.target),
     onInput: (color) => window.onInput(color),
     onChange: (color) => window.onChange(color),
-    colorFormats: ['hex', 'rgba', 'hsla'],
+    colorFormats: ['rgba', 'hsla'],
     showColorStringEnabled: true,
     icons: {
       format: '🔄',
       add: '+',
       opacity: '🔅',
-      copy: '📎',
     },
   });
 
