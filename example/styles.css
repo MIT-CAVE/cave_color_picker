@@ -378,12 +378,6 @@
     left:8px;
   }
   
-  .color-picker__swatch > button[name="editSwatch"] {
-    right: 22px;
-    cursor: pointer;
-  }
-
-  
 .color-picker__swatch:hover > button {
   opacity: 1;
 }

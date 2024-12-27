@@ -25,7 +25,6 @@ window.onClickOutside = (target) => {
     showColorStringEnabled: true,
     icons: {
       format: '🔄',
-      add: '+',
       opacity: '🔅',
     },
   });
